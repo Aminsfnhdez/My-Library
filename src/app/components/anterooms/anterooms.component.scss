@@ -1,0 +1,35 @@
+:host {
+    display: block;
+    min-height: 100vh;
+    background-image: url('/assets/fondo2.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    --tw-bg-opacity: 1;
+    background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+    background-blend-mode: multiply;
+    background-size: cover;
+}
+
+:host ::ng-deep {
+    .large-button {
+        .p-button {
+            font-size: 2.55rem;
+            padding: 1.7rem 4.25rem;
+            
+            &.p-button-rounded {
+                border-radius: 3.4rem;
+            }
+        }
+    }
+}
+
+.circle-container {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
