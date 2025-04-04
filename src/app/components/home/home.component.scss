@@ -1,0 +1,11 @@
+:host {
+    display: block;
+    min-height: 100vh;
+    background-image: url('/assets/fondo1.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    --tw-bg-opacity: 1;
+    background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+    background-blend-mode: multiply;
+    background-size: cover;
+}
