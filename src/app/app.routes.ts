@@ -6,39 +6,44 @@ import { ContactComponent } from './components/contact/contact.component';
 import { LicenceComponent } from './components/licence/licence.component';
 import { NextAdquisitionsComponent } from './components/next-adquisitions/next-adquisitions.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
+import { InfoComponent } from './components/info/info.component';
 
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: 'anterooms',
+        redirectTo: 'prev',
         pathMatch: 'full'
     },
     {
-        path: 'anterooms',
+        path: 'prev',
         component: AnteroomsComponent,
     },
     {
-        path: 'home',
+        path: 'inicio',
         component: HomeComponent,
     },
     {
-        path: 'about',
+        path: 'acerca-de',
         component: AboutComponent
     },
     {
-        path: 'contact',
+        path: 'contactame',
         component: ContactComponent
     },
     {
-        path: 'licence',
+        path: 'licencia',
         component: LicenceComponent
     },
     {
-        path:'next-adquisitions',
+        path:'proxima-adquisicion',
         component: NextAdquisitionsComponent
     },
     {
-        path: 'privacy-policy',
+        path: 'politica-de-privacidad',
         component: PrivacyPolicyComponent
+    },
+    {
+        path: 'informacion',
+        component: InfoComponent,
     }
 ];
