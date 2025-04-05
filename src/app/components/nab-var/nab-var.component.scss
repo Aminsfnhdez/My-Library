@@ -1,0 +1,6 @@
+.active-link {
+    color: #2563eb !important; /* text-blue-700 */
+    @media (prefers-color-scheme: dark) {
+        color: #3b82f6 !important; /* dark:text-blue-500 */
+    }
+}

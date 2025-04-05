@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-nab-var',
-  imports: [],
+  standalone: true,
+  imports: [RouterModule],
   templateUrl: './nab-var.component.html',
   styleUrl: './nab-var.component.scss'
 })

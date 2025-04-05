@@ -1,8 +1,36 @@
-<div class="card flex justify-center mt-6 ">
-    <p-panel header="Contactame" [toggleable]="true">
-        <p class="m-0">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+<div class="card flex justify-center w-full mx-auto px-4 mt-2 mx-2">
+    <p-panel header="Contáctame" [toggleable]="true">
+        <div class="flex flex-col gap-4">
+            <p class="m-0 text-center md:text-left">
+                Si tienes alguna pregunta sobre el funcionamiento de la aplicación, sugerencias para mejorar su experiencia, 
+                necesitas asistencia técnica o tienes alguna inquietud sobre la gestión de tu biblioteca personal, 
+                puedes contactarme a través de los siguientes medios. Estoy disponible para ayudarte con cualquier aspecto 
+                relacionado con la aplicación, desde consultas técnicas hasta recomendaciones de uso. Tu feedback es 
+                importante para seguir mejorando y adaptando la aplicación a las necesidades de los usuarios.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <a href="https://www.linkedin.com/in/aminsfnhdez" target="_blank" 
+                   class="flex items-center justify-center md:justify-start gap-2 text-blue-600 hover:text-blue-800 p-3 rounded-lg hover:bg-blue-50 transition-colors">
+                    <i class="pi pi-linkedin text-xl"></i>
+                    <span>LinkedIn</span>
+                </a>
+
+                <a href="https://wa.me/+573245657791" target="_blank" 
+                   class="flex items-center justify-center md:justify-start gap-2 text-green-600 hover:text-green-800 p-3 rounded-lg hover:bg-green-50 transition-colors">
+                    <i class="pi pi-whatsapp text-xl"></i>
+                    <span>WhatsApp</span>
+                </a>
+
+                <div class="flex items-center justify-center md:justify-start gap-2 p-3 rounded-lg hover:bg-gray-50 transition-colors">
+                    <i class="pi pi-phone text-xl text-gray-600"></i>
+                    <span>+57 324 565 7791</span>
+                </div>
+            </div>
+
+            <p class="m-0 text-sm text-gray-600 text-center">
+                Horario de atención: Lunes a Viernes de 9:00 a 17:00
+            </p>
+        </div>
     </p-panel>
 </div>

@@ -5,10 +5,11 @@ import {PrivacyPolicyComponent} from "../privacy-policy/privacy-policy.component
 import { FooterComponent } from "../footer/footer.component";
 import { LicenceComponent } from "../licence/licence.component";
 import { ContactComponent } from "../contact/contact.component";
+import { HeaderComponent } from "../header/header.component";
 
 @Component({
   selector: 'app-info',
-  imports: [NabVarComponent, PrivacyPolicyComponent, FooterComponent, AboutComponent, LicenceComponent, ContactComponent],
+  imports: [NabVarComponent, PrivacyPolicyComponent, FooterComponent, AboutComponent, LicenceComponent, ContactComponent, HeaderComponent],
   templateUrl: './info.component.html',
   styleUrl: './info.component.scss'
 })
