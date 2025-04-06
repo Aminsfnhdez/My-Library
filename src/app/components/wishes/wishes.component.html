@@ -26,12 +26,14 @@
                 <th scope="col" class="px-6 py-3">
                     Autor
                 </th>
+                <!--
                 <th scope="col" class="px-6 py-3">
                     Precio
                 </th>
                 <th scope="col" class="px-6 py-3">
                     Fecha
                 </th>
+                -->
                 <th scope="col" class="px-6 py-3">
                     Acciones
                 </th>
@@ -45,12 +47,14 @@
                 <td class="px-6 py-4">
                     {{libro.autor}}
                 </td>
+                <!--
                 <td class="px-6 py-4">
                     ${{libro.precio | number:'1.2-2'}}
                 </td>
                 <td class="px-6 py-4">
                     {{libro.fecha.toDate() | date:'medium'}}
                 </td>
+                -->
                 <td class="px-6 py-4">
                     <button (click)="openModal(libro)" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Editar</button>
                     <button (click)="eliminarLibro(libro.id!)" class="font-medium text-red-600 dark:text-red-500 hover:underline ms-3">Eliminar</button>
