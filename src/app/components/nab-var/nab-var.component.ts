@@ -9,5 +9,9 @@ import { RouterModule } from '@angular/router';
   styleUrl: './nab-var.component.scss'
 })
 export class NabVarComponent {
+  isMenuOpen = false;
 
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 }
