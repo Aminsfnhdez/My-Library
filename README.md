@@ -1,59 +1,98 @@
-# MyLibrary
+# 📚 MyLibrary - Sistema de Gestión de Biblioteca
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.1.
+MyLibrary es una aplicación web moderna desarrollada con Angular para la gestión de una biblioteca personal o institucional. Permite organizar, buscar y gestionar libros de manera eficiente.
 
-## Development server
+## 🚀 Características Principales
 
-To start a local development server, run:
+- 📖 Gestión completa de libros (agregar, editar, eliminar)
+- 🔍 Búsqueda avanzada por título
+- 📱 Diseño responsivo para todos los dispositivos
+- 🌓 Modo claro/oscuro
+- 📸 Gestión de portadas de libros
+- 📊 Organización por estantes
+- 🎨 Interfaz moderna con PrimeNG y Tailwind CSS
 
+## ⚙️ Requisitos del Sistema
+
+- Node.js (versión 16 o superior)
+- npm (versión 7 o superior)
+- Angular CLI (versión 19.2.1 o superior)
+
+## 🛠️ Instalación
+
+1. Clonar el repositorio:
+```bash
+git clone [URL_DEL_REPOSITORIO]
+cd my-library
+```
+
+2. Instalar dependencias:
+```bash
+npm install
+```
+
+3. Iniciar el servidor de desarrollo:
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+4. Abrir el navegador en `http://localhost:4200`
 
-## Code scaffolding
+## 📦 Dependencias Principales
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Angular 19.2.1
+- PrimeNG
+- Tailwind CSS
+- RxJS
+- TypeScript
+
+## 🏗️ Estructura del Proyecto
+
+```
+src/
+├── app/
+│   ├── components/
+│   ├── services/
+├── assets/
+└── environments/
+```
+
+## 🔧 Comandos Útiles
 
 ```bash
+# Generar un nuevo componente
 ng generate component component-name
-```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+# Construir el proyecto para producción
+ng build --configuration production
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
+# Ejecutar pruebas unitarias
 ng test
-```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
+# Ejecutar pruebas e2e
 ng e2e
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## ⚠️ IMPORTANTE
 
-## Additional Resources
+- Asegúrate de tener todas las dependencias instaladas antes de ejecutar la aplicación
+- El archivo `environment.ts` debe ser configurado con las credenciales correctas
+- Para el modo de producción, utiliza `ng build --configuration production`
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 🤝 Contribución
+
+Las contribuciones son bienvenidas. Por favor, sigue estos pasos:
+
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
+
+## 📞 Soporte
+
+Para soporte, por favor abra un issue en el repositorio o contacte al administrador del proyecto.
