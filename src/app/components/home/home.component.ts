@@ -7,6 +7,7 @@ import { FooterComponent } from "../footer/footer.component";
 import { EstanteComponent } from "../estante/estante.component";
 
 
+
 @Component({
   selector: 'app-home',
   imports: [CommonModule, NabVarComponent, FooterComponent, HeaderComponent, EstanteComponent],

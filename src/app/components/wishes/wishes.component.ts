@@ -16,6 +16,8 @@ export class WishesComponent implements OnInit {
   isModalOpen = false;
   isEditMode = false;
   libros: Libro[] = [];
+  filteredLibros: Libro[] = [];
+  searchTerm: string = '';
   libro: Libro = {
     titulo: '',
     autor: '',
@@ -38,6 +40,7 @@ export class WishesComponent implements OnInit {
     this.deseoService.obtenerLibros().subscribe({
       next: (libros) => {
         this.libros = libros;
+        this.filteredLibros = libros;
         this.totalItems = libros.length;
       },
       error: (error) => {
@@ -48,10 +51,22 @@ export class WishesComponent implements OnInit {
     });
   }
 
+  filterLibros() {
+    if (!this.searchTerm) {
+      this.filteredLibros = this.libros;
+    } else {
+      this.filteredLibros = this.libros.filter(libro => 
+        libro.titulo.toLowerCase().includes(this.searchTerm.toLowerCase())
+      );
+    }
+    this.totalItems = this.filteredLibros.length;
+    this.currentPage = 1; // Resetear a la primera página al filtrar
+  }
+
   // Métodos de paginación
   get paginatedLibros(): Libro[] {
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;
-    return this.libros.slice(startIndex, startIndex + this.itemsPerPage);
+    return this.filteredLibros.slice(startIndex, startIndex + this.itemsPerPage);
   }
 
   get totalPages(): number {

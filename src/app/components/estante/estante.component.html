@@ -1,20 +1,139 @@
-
-
-<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-    <a href="#">
-        <img class="rounded-t-lg" src="/assets/fondo1.webp" alt="" />
-    </a>
-    <div class="p-5">
-        <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-        </a>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            Read more
-             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+<div class="bg-white rounded-lg mt-2 dark:bg-gray-900 mx-2 mt-2">
+    <p-toast></p-toast>
+    <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
+    
+    <div class="flex flex-column sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-4">
+        <button (click)="mostrarModal()" class="inline-flex items-center text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 ml-2 my-2" type="button">
+            <svg class="w-4 h-4 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 5.757v8.486M5.757 10h8.486M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
             </svg>
-        </a>
+            Agregar Libro
+        </button>
+        
+        <div class="relative">
+            <div class="absolute inset-y-0 left-0 rtl:inset-r-0 rtl:right-0 flex items-center ps-3 pointer-events-none">
+                <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+            </div>
+            <input 
+                type="text" 
+                [(ngModel)]="terminoBusqueda"
+                (ngModelChange)="buscarLibros()"
+                class="block p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mr-2" 
+                placeholder="Buscar por título">
+        </div>
+    </div>
+
+    <p-dialog 
+        [(visible)]="displayModal" 
+        [style]="{width: '50vw'}" 
+        [modal]="true"
+        [draggable]="false"
+        [resizable]="false"
+        header="Agregar Nuevo Libro"
+        (onHide)="ocultarModal()">
+        <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="field">
+                <label for="titulo" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Título</label>
+                <input pInputText id="titulo" [(ngModel)]="nuevoLibro.titulo" name="titulo" class="w-full" required>
+            </div>
+            <div class="field">
+                <label for="autor" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Autor</label>
+                <input pInputText id="autor" [(ngModel)]="nuevoLibro.autor" name="autor" class="w-full" required>
+            </div>
+            <div class="field">
+                <label for="genero" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Género</label>
+                <input pInputText id="genero" [(ngModel)]="nuevoLibro.genero" name="genero" class="w-full" required>
+            </div>
+            <div class="field">
+                <label for="edicion" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Edición</label>
+                <input pInputText id="edicion" [(ngModel)]="nuevoLibro.edicion" name="edicion" class="w-full" required>
+            </div>
+            <div class="field">
+                <label for="editorial" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Editorial</label>
+                <input pInputText id="editorial" [(ngModel)]="nuevoLibro.editorial" name="editorial" class="w-full" required>
+            </div>
+            <div class="field">
+                <label for="coleccion" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Colección</label>
+                <input pInputText id="coleccion" [(ngModel)]="nuevoLibro.coleccion" name="coleccion" class="w-full" required>
+            </div>
+            <div class="field">
+                <label for="reimpresion" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Re-Impresión</label>
+                <input pInputText id="reimpresion" [(ngModel)]="nuevoLibro.reimpresion" name="reimpresion" class="w-full" required>
+            </div>
+            <div class="field">
+                <label for="estante" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Estante</label>
+                <input pInputText type="number" id="estante" [(ngModel)]="nuevoLibro.estante" name="estante" class="w-full" required>
+            </div>
+            <div class="field md:col-span-2">
+                <label for="portada" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Portada</label>
+                <input type="file" id="portada" (change)="onFileSelected($event)" accept="image/*" class="w-full" required>
+            </div>
+        </form>
+        <ng-template pTemplate="footer">
+            <p-button label="Cancelar" icon="pi pi-times" severity="danger" (onClick)="ocultarModal()" ></p-button>
+            <p-button label="Guardar" icon="pi pi-check" severity="success" (onClick)="guardarLibro()" [disabled]="!portadaSeleccionada"></p-button>
+        </ng-template>
+    </p-dialog>
+
+    <div class="bg-white rounded-lg mt-2 dark:bg-gray-900 mx-2">
+        <div *ngIf="loading" class="text-center">
+            <div class="w-full max-w-4xl mx-auto px-4 my-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+                <div class="card flex items-center justify-center w-full h-56 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+                    <div class="px-3 py-1 text-xs font-medium leading-none text-center text-blue-800 bg-blue-200 rounded-full animate-pulse dark:bg-blue-900 dark:text-blue-200">Cargando...</div>
+                </div>
+            </div>
+        </div>
+    
+        <div *ngIf="error" class="text-center text-red-500">
+            <p>{{error}}</p>
+        </div>
+    
+        <div *ngIf="!loading && !error">
+            <div *ngIf="estantes.length === 0" class="text-center">
+                <p>No hay libros disponibles</p>
+            </div>
+    
+            <div class="grid grid-cols-1 gap-4" *ngIf="estantes.length > 0">
+                <div *ngFor="let estante of estantes"
+                    class="card z-40 border-b border-gray-200 dark:border-gray-600 mx-2 my-2">
+                    <p-panel [header]="'Estante Nro ' + estante" [toggleable]="true">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div *ngFor="let libro of getLibrosPorEstante(estante)"
+                                class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+                                <div class="h-64 flex items-center justify-center overflow-hidden">
+                                    <img class="w-full h-full object-contain" [src]="libro.portadaUrl" alt="Portada de {{libro.titulo}}" />
+                                </div>
+                                <div class="p-5">
+                                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                        {{libro.titulo}}</h5>
+                                    <strong>Autor </strong><span>{{libro.autor}}</span><br>
+                                    <strong>Colección </strong><span>{{libro.coleccion}}</span><br>
+                                    <strong>Edición </strong><span>{{libro.edicion}}</span><br>
+                                    <strong>Editorial </strong><span>{{libro.editorial}}</span><br>
+                                    <strong>Género </strong><span>{{libro.genero}}</span><br>
+                                    <strong>Re-Impresión </strong><span>{{libro.reimpresion}}</span>
+                                </div>
+                                <div class="flex justify-center gap-4 p-4 border-t border-gray-200 dark:border-gray-700">
+                                    <p-button 
+                                        icon="pi pi-pencil" 
+                                        severity="info" 
+                                        (onClick)="editarLibro(libro)"
+                                        [rounded]="true"
+                                        styleClass="p-button-sm p-button-outlined min-w-[120px]">Editar
+                                    </p-button>
+                                    <p-button 
+                                        icon="pi pi-trash" 
+                                        severity="danger" 
+                                        (onClick)="eliminarLibro(libro)"
+                                        [rounded]="true"
+                                        styleClass="p-button-sm p-button-outlined min-w-[120px]">Eliminar
+                                    </p-button>
+                                </div>
+                            </div>
+                        </div>
+                    </p-panel>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-
