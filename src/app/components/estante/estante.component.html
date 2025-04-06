@@ -1,5 +1,5 @@
 <div class="bg-white rounded-lg mt-2 dark:bg-gray-900 mx-2 mt-2">
-    <p-toast></p-toast>
+    <p-toast position="top-center" [style]="{width: '90%', maxWidth: '400px'}" [baseZIndex]="1000"></p-toast>
     <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
     
     <div class="flex flex-column sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-4">
@@ -71,7 +71,7 @@
         </form>
         <ng-template pTemplate="footer">
             <p-button label="Cancelar" icon="pi pi-times" severity="danger" (onClick)="ocultarModal()" ></p-button>
-            <p-button label="Guardar" icon="pi pi-check" severity="success" (onClick)="guardarLibro()" [disabled]="!portadaSeleccionada"></p-button>
+            <p-button label="Guardar" icon="pi pi-check" severity="success" (onClick)="guardarLibro()" [disabled]="!esEdicion && !portadaSeleccionada"></p-button>
         </ng-template>
     </p-dialog>
 
