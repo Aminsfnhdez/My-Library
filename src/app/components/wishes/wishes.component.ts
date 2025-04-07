@@ -20,9 +20,7 @@ export class WishesComponent implements OnInit {
   searchTerm: string = '';
   libro: Libro = {
     titulo: '',
-    autor: '',
-    precio: 0,
-    fecha: Timestamp.now()
+    autor: ''
   };
 
   // Variables de paginación
@@ -95,9 +93,7 @@ export class WishesComponent implements OnInit {
       this.isEditMode = false;
       this.libro = {
         titulo: '',
-        autor: '',
-        precio: 0,
-        fecha: Timestamp.now()
+        autor: ''
       };
     }
     this.isModalOpen = true;
