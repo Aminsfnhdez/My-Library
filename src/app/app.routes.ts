@@ -10,11 +10,6 @@ import { InfoComponent } from './components/info/info.component';
 
 export const routes: Routes = [
     {
-        path: '',
-        redirectTo: 'prev',
-        pathMatch: 'full'
-    },
-    {
         path: 'prev',
         component: AnteroomsComponent,
     },
@@ -45,5 +40,14 @@ export const routes: Routes = [
     {
         path: 'informacion',
         component: InfoComponent,
+    },
+    {
+        path: '',
+        redirectTo: 'prev',
+        pathMatch: 'full'
+    },
+    {
+        path: '**',
+        redirectTo: 'prev'
     }
 ];

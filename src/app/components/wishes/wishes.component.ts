@@ -22,6 +22,7 @@ export class WishesComponent implements OnInit {
     titulo: '',
     autor: ''
   };
+  isLoading = true;
 
   // Variables de paginación
   currentPage = 1;
@@ -35,16 +36,19 @@ export class WishesComponent implements OnInit {
   }
 
   cargarLibros() {
+    this.isLoading = true;
     this.deseoService.obtenerLibros().subscribe({
       next: (libros) => {
         this.libros = libros;
         this.filteredLibros = libros;
         this.totalItems = libros.length;
+        this.isLoading = false;
       },
       error: (error) => {
         toast.error('Error al cargar los libros', {
           description: 'No se pudieron cargar los libros de la lista'
         });
+        this.isLoading = false;
       }
     });
   }
